@@ -123,7 +123,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.seamless</groupId>
+            <groupId>com.github.m3sv.seamless</groupId>
             <artifactId>seamless-swing</artifactId>
             <version>${seamless.version}</version>
         </dependency>

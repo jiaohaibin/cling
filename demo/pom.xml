@@ -18,10 +18,10 @@
         <module>android</module>
     </modules>
 
-    <properties>
-        <!-- This module (and its sub-modules) doesn't have a manual -->
-        <lemma.manual>false</lemma.manual>
-    </properties>
+<!--    <properties>-->
+<!--        &lt;!&ndash; This module (and its sub-modules) doesn't have a manual &ndash;&gt;-->
+<!--        <lemma.manual>false</lemma.manual>-->
+<!--    </properties>-->
 
     <build>
         <plugins>
