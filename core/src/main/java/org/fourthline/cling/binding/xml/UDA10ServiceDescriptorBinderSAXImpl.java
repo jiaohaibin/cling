@@ -47,6 +47,12 @@ import static org.fourthline.cling.binding.xml.Descriptor.Service.ELEMENT;
  */
 public class UDA10ServiceDescriptorBinderSAXImpl extends UDA10ServiceDescriptorBinderImpl {
 
+    private final SAXParser parser;
+
+    public UDA10ServiceDescriptorBinderSAXImpl(SAXParser parser) {
+        this.parser = parser;
+    }
+
     private static Logger log = Logger.getLogger(ServiceDescriptorBinder.class.getName());
 
     @Override
@@ -58,9 +64,6 @@ public class UDA10ServiceDescriptorBinderSAXImpl extends UDA10ServiceDescriptorB
 
         try {
             log.fine("Reading service from XML descriptor");
-
-            SAXParser parser = new SAXParser();
-
             MutableService descriptor = new MutableService();
 
             hydrateBasic(descriptor, undescribedService);
@@ -75,7 +78,7 @@ public class UDA10ServiceDescriptorBinderSAXImpl extends UDA10ServiceDescriptorB
             );
 
             // Build the immutable descriptor graph
-            return (S)descriptor.build(undescribedService.getDevice());
+            return (S) descriptor.build(undescribedService.getDevice());
 
         } catch (ValidationException ex) {
             throw ex;

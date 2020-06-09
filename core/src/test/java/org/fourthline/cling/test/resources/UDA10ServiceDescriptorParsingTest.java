@@ -23,6 +23,7 @@ import org.fourthline.cling.model.meta.RemoteService;
 import org.fourthline.cling.test.data.SampleData;
 import org.fourthline.cling.test.data.SampleServiceOne;
 import org.seamless.util.io.IO;
+import org.seamless.xml.SAXParser;
 import org.testng.annotations.Test;
 
 
@@ -43,7 +44,7 @@ public class UDA10ServiceDescriptorParsingTest {
     @Test
     public void readUDA10DescriptorSAX() throws Exception {
 
-        ServiceDescriptorBinder binder = new UDA10ServiceDescriptorBinderSAXImpl();
+        ServiceDescriptorBinder binder = new UDA10ServiceDescriptorBinderSAXImpl(new SAXParser());
 
         RemoteService service = SampleData.createUndescribedRemoteService();
 
