@@ -88,27 +88,27 @@
                         <!-- THESE IGNORE GLOBAL PLUGIN MANAGEMENT! -->
 
                         <!-- Build the manual for 'site' lifecycle -->
-                        <plugin>
-                            <groupId>org.fourthline.lemma</groupId>
-                            <artifactId>lemma-maven-plugin</artifactId>
-                            <reportSets>
-                                <reportSet>
-                                    <reports>
-                                        <report>site-manual</report>
-                                    </reports>
-                                </reportSet>
-                            </reportSets>
-                            <configuration>
-                                <!-- The directories containing Java (test) sources for citation -->
-                                <sourceDirectories>
-                                    <sourceDirectory>src/main/java</sourceDirectory>
-                                    <sourceDirectory>src/test/java</sourceDirectory>
-                                    <sourceDirectory>../demo/android/browser/src/android</sourceDirectory>
-                                    <sourceDirectory>../demo/android/browser/src/main/java</sourceDirectory>
-                                    <sourceDirectory>../demo/android/light/src/main/java</sourceDirectory>
-                                </sourceDirectories>
-                            </configuration>
-                        </plugin>
+<!--                        <plugin>-->
+<!--                            <groupId>org.fourthline.lemma</groupId>-->
+<!--                            <artifactId>lemma-maven-plugin</artifactId>-->
+<!--                            <reportSets>-->
+<!--                                <reportSet>-->
+<!--                                    <reports>-->
+<!--                                        <report>site-manual</report>-->
+<!--                                    </reports>-->
+<!--                                </reportSet>-->
+<!--                            </reportSets>-->
+<!--                            <configuration>-->
+<!--                                &lt;!&ndash; The directories containing Java (test) sources for citation &ndash;&gt;-->
+<!--                                <sourceDirectories>-->
+<!--                                    <sourceDirectory>src/main/java</sourceDirectory>-->
+<!--                                    <sourceDirectory>src/test/java</sourceDirectory>-->
+<!--                                    <sourceDirectory>../demo/android/browser/src/android</sourceDirectory>-->
+<!--                                    <sourceDirectory>../demo/android/browser/src/main/java</sourceDirectory>-->
+<!--                                    <sourceDirectory>../demo/android/light/src/main/java</sourceDirectory>-->
+<!--                                </sourceDirectories>-->
+<!--                            </configuration>-->
+<!--                        </plugin>-->
 
                         <!-- Javadoc on the website -->
                         <plugin>
