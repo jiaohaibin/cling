@@ -25,6 +25,7 @@ import org.fourthline.cling.mock.MockUpnpServiceConfiguration;
 import org.fourthline.cling.model.meta.RemoteDevice;
 import org.fourthline.cling.test.data.SampleData;
 import org.seamless.util.io.IO;
+import org.seamless.xml.SAXParser;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -110,7 +111,7 @@ public class InvalidUDA10DeviceDescriptorParsingTest {
             new MockUpnpService(new MockUpnpServiceConfiguration() {
                 @Override
                 public DeviceDescriptorBinder getDeviceDescriptorBinderUDA10() {
-                    return new UDA10DeviceDescriptorBinderSAXImpl();
+                    return new UDA10DeviceDescriptorBinderSAXImpl(new SAXParser());
                 }
             })
         );

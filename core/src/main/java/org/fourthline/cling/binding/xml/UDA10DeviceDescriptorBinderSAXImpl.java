@@ -52,6 +52,12 @@ public class UDA10DeviceDescriptorBinderSAXImpl extends UDA10DeviceDescriptorBin
 
     private static Logger log = Logger.getLogger(DeviceDescriptorBinder.class.getName());
 
+    private final SAXParser parser;
+
+    public UDA10DeviceDescriptorBinderSAXImpl(SAXParser parser) {
+        this.parser = parser;
+    }
+
     @Override
     public <D extends Device> D describe(D undescribedDevice, String descriptorXml) throws DescriptorBindingException, ValidationException {
 
@@ -63,8 +69,6 @@ public class UDA10DeviceDescriptorBinderSAXImpl extends UDA10DeviceDescriptorBin
             log.fine("Populating device from XML descriptor: " + undescribedDevice);
 
             // Read the XML into a mutable descriptor graph
-
-            SAXParser parser = new SAXParser();
 
             MutableDevice descriptor = new MutableDevice();
             new RootHandler(descriptor, parser);

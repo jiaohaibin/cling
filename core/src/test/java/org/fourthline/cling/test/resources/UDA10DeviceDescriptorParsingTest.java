@@ -25,6 +25,7 @@ import org.fourthline.cling.model.profile.RemoteClientInfo;
 import org.fourthline.cling.test.data.SampleData;
 import org.fourthline.cling.test.data.SampleDeviceRoot;
 import org.seamless.util.io.IO;
+import org.seamless.xml.SAXParser;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -51,7 +52,7 @@ public class UDA10DeviceDescriptorParsingTest {
     @Test
     public void readUDA10DescriptorSAX() throws Exception {
 
-        DeviceDescriptorBinder binder = new UDA10DeviceDescriptorBinderSAXImpl();
+        DeviceDescriptorBinder binder = new UDA10DeviceDescriptorBinderSAXImpl(new SAXParser());
 
         RemoteDevice device = new RemoteDevice(SampleData.createRemoteDeviceIdentity());
         device = binder.describe(device, IO.readLines(getClass().getResourceAsStream("/descriptors/device/uda10.xml")));
