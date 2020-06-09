@@ -30,12 +30,12 @@
 
     <modules>
         <module>core</module>
-        <module>demo</module>
-        <module>workbench</module>
-        <module>website</module>
-        <module>distribution</module>
+<!--        <module>demo</module>-->
+<!--        <module>workbench</module>-->
+<!--        <module>website</module>-->
+<!--        <module>distribution</module>-->
         <module>support</module>
-        <module>mediarenderer</module>
+<!--        <module>mediarenderer</module>-->
     </modules>
 
     <!-- ##################################################################################################### -->
