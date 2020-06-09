@@ -30,12 +30,12 @@
 
     <modules>
         <module>core</module>
-<!--        <module>demo</module>-->
-<!--        <module>workbench</module>-->
-<!--        <module>website</module>-->
-<!--        <module>distribution</module>-->
+        <!--        <module>demo</module>-->
+        <!--        <module>workbench</module>-->
+        <!--        <module>website</module>-->
+        <!--        <module>distribution</module>-->
         <module>support</module>
-<!--        <module>mediarenderer</module>-->
+        <!--        <module>mediarenderer</module>-->
     </modules>
 
     <!-- ##################################################################################################### -->
@@ -69,23 +69,15 @@
             <timezone>+1</timezone>
         </developer>
     </developers>
-
-    <distributionManagement>
-        <repository>
-            <id>4thline.org</id>
-            <url>scpexe://4thline.org/webroot/vhosts/8080/4thline.org/m2/</url>
-        </repository>
-    </distributionManagement>
-
     <!-- ##################################################################################################### -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
-        <seamless.version>1.1.1</seamless.version>
-        <lemma.version>1.1.1</lemma.version>
+        <seamless.version>1.1.2</seamless.version>
+        <lemma.version>1.1.2-SNAPSHOT</lemma.version>
         <testng.version>6.8.21</testng.version>
         <android.version>4.1.1.4</android.version>
         <android.maven.plugin.version>4.1.1</android.maven.plugin.version>
@@ -104,25 +96,7 @@
     </properties>
 
     <!-- ##################################################################################################### -->
-
-    <repositories>
-        <repository>
-            <id>4thline-repo</id>
-            <url>http://4thline.org/m2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <pluginRepositories>
-        <pluginRepository>
-            <id>4thline-repo</id>
-            <url>http://4thline.org/m2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
         <pluginRepository>
             <id>onejar-maven-plugin.googlecode.com</id>
             <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
@@ -138,7 +112,7 @@
 
         <pluginManagement>
             <plugins>
-                
+
                 <!-- Assembly -->
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>

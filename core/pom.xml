@@ -73,7 +73,7 @@
                         <id>prepare-package-manual</id>
                         <phase>prepare-package</phase>
                         <goals>
-                            <goal>manual</goal>
+<!--                            <goal>manual</goal>-->
                         </goals>
                     </execution>
                 </executions>
