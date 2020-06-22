@@ -68,7 +68,7 @@ public class StateVariableTypeDetails implements Validatable {
         if (!foundDefaultInAllowedValues(defaultValue, allowedValues)) {
             List<String> list = new ArrayList<>(Arrays.asList(allowedValues));
             list.add(getDefaultValue());
-            return list.toArray(new String[list.size()]);
+            return list.toArray(new String[0]);
         }
         return allowedValues;
     }
@@ -97,7 +97,6 @@ public class StateVariableTypeDetails implements Validatable {
         }
 
         if (getAllowedValues() != null) {
-
             if (getAllowedValueRange() != null) {
                 errors.add(new ValidationError(
                         getClass(),
@@ -106,12 +105,14 @@ public class StateVariableTypeDetails implements Validatable {
                 ));
             }
 
-            if (!Datatype.Builtin.STRING.equals(getDatatype().getBuiltin())) {
-                errors.add(new ValidationError(
-                        getClass(),
-                        "allowedValues",
-                        "Allowed value list of state variable only available for string datatype, not: " + getDatatype()
-                ));
+            if (getDatatype() != null) {
+                if (!Datatype.Builtin.STRING.equals(getDatatype().getBuiltin())) {
+                    errors.add(new ValidationError(
+                            getClass(),
+                            "allowedValues",
+                            "Allowed value list of state variable only available for string datatype, not: " + getDatatype()
+                    ));
+                }
             }
 
             for (String s : getAllowedValues()) {
