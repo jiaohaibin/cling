@@ -172,37 +172,37 @@
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>com.google.android</groupId>
-            <artifactId>android</artifactId>
-            <version>${android.version}</version>
-            <scope>compile</scope>
-            <optional>true</optional>
-            <exclusions>
-                <!-- Of course, kxml2 is actually used by Android at runtime -->
-                <exclusion>
-                    <groupId>xpp3</groupId>
-                    <artifactId>xpp3</artifactId>
-                </exclusion>
-                <!-- Don't need these to compile Cling -->
-                <exclusion>
-                    <groupId>org.khronos</groupId>
-                    <artifactId>opengl-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.json</groupId>
-                    <artifactId>json</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>xerces</groupId>
-                    <artifactId>xmlParserAPIs</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.android</groupId>-->
+<!--            <artifactId>android</artifactId>-->
+<!--            <version>${android.version}</version>-->
+<!--            <scope>compile</scope>-->
+<!--            <optional>true</optional>-->
+<!--            <exclusions>-->
+<!--                &lt;!&ndash; Of course, kxml2 is actually used by Android at runtime &ndash;&gt;-->
+<!--                <exclusion>-->
+<!--                    <groupId>xpp3</groupId>-->
+<!--                    <artifactId>xpp3</artifactId>-->
+<!--                </exclusion>-->
+<!--                &lt;!&ndash; Don't need these to compile Cling &ndash;&gt;-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.khronos</groupId>-->
+<!--                    <artifactId>opengl-api</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.json</groupId>-->
+<!--                    <artifactId>json</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>xerces</groupId>-->
+<!--                    <artifactId>xmlParserAPIs</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>commons-logging</groupId>-->
+<!--                    <artifactId>commons-logging</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
