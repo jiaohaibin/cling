@@ -83,7 +83,7 @@
         <android.version>4.1.1.4</android.version>
         <android.maven.plugin.version>4.1.1</android.maven.plugin.version>
         <maven.site.plugin.version>3.4</maven.site.plugin.version>
-        <jetty.version>8.1.8.v20121106</jetty.version>
+        <jetty.version>9.4.30.v20200611</jetty.version>
         <cdi.api.version>1.2</cdi.api.version>
         <ejb.api.version>3.0</ejb.api.version>
         <slf4j.version>1.7.12</slf4j.version>

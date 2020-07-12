@@ -5,7 +5,6 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
-import org.eclipse.jetty.http.HttpHeaders
 import org.fourthline.cling.model.message.*
 import org.fourthline.cling.model.message.header.ContentTypeHeader
 import org.fourthline.cling.model.message.header.UpnpHeader
@@ -87,7 +86,7 @@ class OkHttpStreamClient(
                 val contentType: String? = message.contentTypeHeader?.value?.toString()
                 val requestBody = message.bodyString.toRequestBody(contentType?.toMediaType())
 
-                addHeader(HttpHeaders.CONTENT_LENGTH, requestBody.contentLength().toString())
+                addHeader("content-length", requestBody.contentLength().toString())
 
                 method(message.operation.httpMethodName, requestBody)
             } else {
@@ -95,7 +94,7 @@ class OkHttpStreamClient(
                 val requestBody = message.bodyBytes?.toRequestBody(contentType?.toMediaType())
 
                 if (requestBody != null) {
-                    addHeader(HttpHeaders.CONTENT_LENGTH, requestBody.contentLength().toString())
+                    addHeader("content-length", requestBody.contentLength().toString())
                 }
 
                 method(message.operation.httpMethodName, requestBody)
