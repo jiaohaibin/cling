@@ -18,7 +18,7 @@ import org.fourthline.cling.UpnpServiceConfiguration;
 import org.fourthline.cling.transport.impl.StreamServerConfigurationImpl;
 import org.fourthline.cling.transport.impl.StreamServerImpl;
 import org.fourthline.cling.transport.impl.jetty.StreamClientConfigurationImpl;
-import org.fourthline.cling.transport.impl.jetty.StreamClientImpl;
+import org.fourthline.cling.transport.impl.jetty.JettyStreamClientImpl;
 import org.fourthline.cling.transport.spi.StreamClient;
 import org.fourthline.cling.transport.spi.StreamServer;
 
@@ -36,7 +36,7 @@ public class JDKServerJettyClientTest extends StreamServerClientTest {
 
     @Override
     public StreamClient createStreamClient(UpnpServiceConfiguration configuration) {
-        return new StreamClientImpl(
+        return new JettyStreamClientImpl(
             new StreamClientConfigurationImpl(
                 configuration.getSyncProtocolExecutorService(),
                 3

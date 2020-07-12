@@ -52,14 +52,14 @@ import java.util.logging.Logger;
  *
  * @author Christian Bauer
  */
-public class StreamClientImpl extends AbstractStreamClient<StreamClientConfigurationImpl, StreamClientImpl.HttpContentExchange> {
+public class JettyStreamClientImpl extends AbstractStreamClient<StreamClientConfigurationImpl, JettyStreamClientImpl.HttpContentExchange> {
 
     final private static Logger log = Logger.getLogger(StreamClient.class.getName());
 
     final protected StreamClientConfigurationImpl configuration;
     final protected HttpClient client;
 
-    public StreamClientImpl(StreamClientConfigurationImpl configuration) throws InitializationException {
+    public JettyStreamClientImpl(StreamClientConfigurationImpl configuration) throws InitializationException {
         this.configuration = configuration;
 
         log.info("Starting Jetty HttpClient...");

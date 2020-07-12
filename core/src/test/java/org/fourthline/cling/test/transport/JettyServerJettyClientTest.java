@@ -19,7 +19,7 @@ import org.fourthline.cling.transport.impl.AsyncServletStreamServerConfiguration
 import org.fourthline.cling.transport.impl.AsyncServletStreamServerImpl;
 import org.fourthline.cling.transport.impl.jetty.JettyServletContainer;
 import org.fourthline.cling.transport.impl.jetty.StreamClientConfigurationImpl;
-import org.fourthline.cling.transport.impl.jetty.StreamClientImpl;
+import org.fourthline.cling.transport.impl.jetty.JettyStreamClientImpl;
 import org.fourthline.cling.transport.spi.StreamClient;
 import org.fourthline.cling.transport.spi.StreamServer;
 
@@ -50,7 +50,7 @@ public class JettyServerJettyClientTest extends StreamServerClientTest {
 
     @Override
     public StreamClient createStreamClient(UpnpServiceConfiguration configuration) {
-        return new StreamClientImpl(
+        return new JettyStreamClientImpl(
             new StreamClientConfigurationImpl(
                 configuration.getSyncProtocolExecutorService(),
                 3
