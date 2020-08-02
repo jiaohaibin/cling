@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.github.m3sv.cling</groupId>
         <artifactId>cling-demo</artifactId>
-        <version>2.1.8</version>
+        <version>2.1.9</version>
     </parent>
 
 	<name>Cling Demo Android</name>
