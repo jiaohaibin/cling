@@ -29,9 +29,13 @@ class OkHttpStreamClient(
             .addHeaders(message)
             .addBody(message).build()
 
-        val response = client.newCall(request).execute()
-
-        return parseResponse(response)
+        return try {
+            val response = client.newCall(request).execute()
+            parseResponse(response)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
     }
 
     private fun parseResponse(response: Response): StreamResponseMessage? {
@@ -44,6 +48,7 @@ class OkHttpStreamClient(
                 add(header.first, header.second)
             }
         }
+
         responseMessage.headers = upnpHeaders
 
         response.body
