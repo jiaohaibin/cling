@@ -118,8 +118,10 @@ public class PullSOAPActionProcessorImpl extends SOAPActionProcessorImpl {
 
         // This is a case-insensitive search!
         List<String> names = new ArrayList<>();
+        HashMap<String, String> relatedStateVariableNames = new HashMap<>();
         for (ActionArgument argument : args) {
             names.add(argument.getName().toUpperCase(Locale.ROOT));
+            relatedStateVariableNames.put(argument.getRelatedStateVariableName().toUpperCase(Locale.ROOT), argument.getName());
             for (String alias : Arrays.asList(argument.getAliases())) {
                 names.add(alias.toUpperCase(Locale.ROOT));
             }
@@ -134,8 +136,9 @@ public class PullSOAPActionProcessorImpl extends SOAPActionProcessorImpl {
             event = xpp.next();
             if(event == XmlPullParser.START_TAG && names.contains(xpp.getName().toUpperCase(Locale.ROOT))) {
                 matches.put(xpp.getName(), xpp.nextText());
+            } else if(event == XmlPullParser.START_TAG && relatedStateVariableNames.containsKey(xpp.getName().toUpperCase(Locale.ROOT))) {
+                matches.put(relatedStateVariableNames.get(xpp.getName().toUpperCase(Locale.ROOT)), xpp.nextText());
             }
-
         }
         while (event != XmlPullParser.END_DOCUMENT && (event != XmlPullParser.END_TAG || !xpp.getName().equals(enclosingTag)));
 
