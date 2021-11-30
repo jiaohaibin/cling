@@ -143,11 +143,11 @@ public class PullSOAPActionProcessorImpl extends SOAPActionProcessorImpl {
         while (event != XmlPullParser.END_DOCUMENT && (event != XmlPullParser.END_TAG || !xpp.getName().equals(enclosingTag)));
 
         if (matches.size() < args.length) {
-            throw new ActionException(
+            /*throw new ActionException(
                 ErrorCode.ARGUMENT_VALUE_INVALID,
                 "Invalid number of input or output arguments in XML message, expected "
                     + args.length + " but found " + matches.size()
-            );
+            );*/
         }
         return matches;
     }
@@ -156,22 +156,24 @@ public class PullSOAPActionProcessorImpl extends SOAPActionProcessorImpl {
         // We're in the <ActionName>Response tag
         Map<String, String> matches = getMatchingNodes(xpp, args);
 
-        ActionArgumentValue[] values = new ActionArgumentValue[args.length];
+        //ActionArgumentValue[] values = new ActionArgumentValue[args.length];
+        ArrayList<ActionArgumentValue> values = new ArrayList<>();
 
         for (int i = 0; i < args.length; i++) {
 
             ActionArgument arg = args[i];
             String value = findActionArgumentValue(matches, arg);
             if (value == null) {
-                throw new ActionException(
-                    ErrorCode.ARGUMENT_VALUE_INVALID,
-                    "Could not find argument '" + arg.getName() + "' node");
-            }
+                /*throw new ActionException(
+                        ErrorCode.ARGUMENT_VALUE_INVALID,
+                        "Could not find argument '" + arg.getName() + "' node");*/
+            } else {
 
-            log.fine("Reading action argument: " + arg.getName());
-            values[i] = createValue(arg, value);
+                log.fine("Reading action argument: " + arg.getName());
+                values.add(createValue(arg, value));
+            }
         }
-        return values;
+        return values.toArray(new ActionArgumentValue[0]);
     }
 
     protected String findActionArgumentValue(Map<String, String> entries, ActionArgument arg) {

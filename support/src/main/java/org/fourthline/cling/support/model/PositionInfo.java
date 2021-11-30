@@ -40,14 +40,14 @@ public class PositionInfo {
 
     public PositionInfo(Map<String, ActionArgumentValue> args) {
         this(
-                ((UnsignedIntegerFourBytes) args.get("Track").getValue()).getValue(),
-                (String) args.get("TrackDuration").getValue(),
-                (String) args.get("TrackMetaData").getValue(),
-                (String) args.get("TrackURI").getValue(),
-                (String) args.get("RelTime").getValue(),
-                (String) args.get("AbsTime").getValue(),
-                (Integer) args.get("RelCount").getValue(),
-                (Integer) args.get("AbsCount").getValue()
+                (args.containsKey("Track") ? ((UnsignedIntegerFourBytes) args.get("Track").getValue()).getValue() : null),
+                (String) (args.containsKey("TrackDuration") ? args.get("TrackDuration").getValue() : null),
+                (String) (args.containsKey("TrackMetaData") ? args.get("TrackMetaData").getValue() : null),
+                (String) (args.containsKey("TrackURI") ? args.get("TrackURI").getValue() : null),
+                (String) (args.containsKey("RelTime") ? args.get("RelTime").getValue() : null),
+                (String) (args.containsKey("AbsTime") ? args.get("AbsTime").getValue() : null),
+                (Integer) (args.containsKey("RelCount") ? args.get("RelCount").getValue() : Integer.MAX_VALUE),
+                (Integer) (args.containsKey("AbsCount") ? args.get("AbsCount").getValue() : Integer.MAX_VALUE)
         );
     }
 
