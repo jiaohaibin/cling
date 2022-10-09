@@ -116,7 +116,9 @@ public class StateVariableTypeDetails implements Validatable {
             }
 
             for (String s : getAllowedValues()) {
-                if (s.length() > 31) {
+                if (s == null) {
+                    log.warning("UPnP specification violation, allowed value string must not be null");
+                } else if (s.length() > 31) {
                     log.warning("UPnP specification violation, allowed value string must be less than 32 chars: " + s);
                 }
             }
