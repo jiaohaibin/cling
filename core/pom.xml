@@ -154,16 +154,22 @@
             <groupId>com.github.m3sv.seamless</groupId>
             <artifactId>seamless-util</artifactId>
             <version>${seamless.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../libs/seamless-util/${seamless.version}/seamless-util.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.github.m3sv.seamless</groupId>
             <artifactId>seamless-http</artifactId>
             <version>${seamless.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../libs/seamless-http/${seamless.version}/seamless-http.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.github.m3sv.seamless</groupId>
             <artifactId>seamless-xml</artifactId>
             <version>${seamless.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../libs/seamless-xml/${seamless.version}/seamless-xml.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
